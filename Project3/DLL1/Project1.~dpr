@@ -1,0 +1,19 @@
+library Project1;
+
+uses
+  SysUtils,
+  Classes;
+
+
+function Summ(K: integer): integer;
+begin
+K:= K+2;
+end;
+
+{$R *.res}
+exports Summ index 12;
+
+begin
+
+end.
+ 
