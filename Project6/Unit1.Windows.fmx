@@ -1,0 +1,17 @@
+inherited Form1_Windows: TForm1_Windows
+  ClientHeight = 71
+  ClientWidth = 213
+  DesignerMasterStyle = 0
+  inherited Button1: TButton
+    Position.Y = 16.000000000000000000
+  end
+  inherited Button2: TButton
+    Position.Y = 40.000000000000000000
+  end
+  inherited Switch1: TSwitch
+    Position.Y = 40.000000000000000000
+  end
+  inherited Edit1: TEdit
+    Position.Y = 16.000000000000000000
+  end
+end

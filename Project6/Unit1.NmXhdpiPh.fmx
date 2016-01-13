@@ -1,0 +1,12 @@
+inherited Form1_NmXhdpiPh: TForm1_NmXhdpiPh
+  ClientHeight = 615
+  ClientWidth = 400
+  DesignerMasterStyle = 0
+  inherited Switch1: TSwitch
+    Size.Width = 44.000000000000000000
+    Size.Height = 26.000000000000000000
+  end
+  inherited Edit1: TEdit
+    Size.Height = 32.000000000000000000
+  end
+end

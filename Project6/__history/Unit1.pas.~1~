@@ -1,0 +1,61 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Edit, Registry;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Switch1: TSwitch;
+    Edit1: TEdit;
+    procedure Switch1Switch(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+{$R *.iPhone4in.fmx IOS}
+{$R *.Surface.fmx MSWINDOWS}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var RegIni:TRegIniFile;
+begin
+if Switch1.IsChecked
+  then
+    Begin
+     RegIni:=TRegIniFile.Create('Software');
+     RegIni.OpenKey('online', true);
+     Edit1.Text:=RegIni.ReadString('Razd','Param','Default');
+    end
+  else
+    Begin
+     RegIni:=TRegIniFile.Create('Software');
+     RegIni.OpenKey('online', true);
+     RegIni.WriteString('Razd', 'Param', Edit1.Text);
+     RegIni.Free;
+     end;
+
+
+end;
+
+procedure TForm1.Switch1Switch(Sender: TObject);
+begin
+if Switch1.IsChecked
+  then Button1.text :='Сканировать'
+  else Button1.text :='Создать';
+end;
+
+end.
